@@ -155,7 +155,6 @@ export const useFetchNotes = (id) => {
         return data;
       }
     },
-    staleTime: 60000,
   });
   return { isLoading, isError, data };
 };
@@ -178,7 +177,6 @@ export const useFetchSingleNote = (id) => {
         return data;
       }
     },
-    staleTime: 60000,
   });
   return { isLoading, isError, data };
 };

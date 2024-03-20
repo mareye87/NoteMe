@@ -14,9 +14,6 @@ const SingleNote = ({ note }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
 
-  const authorEmail = created_by[1];
-  const authorName = created_by[0];
-
   return (
     <div className="flex justify-between gap-2 bg-yellow-300 rounded-md p-4 hover:scale-105 transition duration-300 relative mb-6 shadow-md">
       <h3 className="absolute -top-2 left-0 text-xs bg-red-500 px-4 rounded-sm text-white">
@@ -25,12 +22,14 @@ const SingleNote = ({ note }) => {
           {group_member}
         </span>
       </h3>
-      <h3 className="absolute -bottom-2 right-0 text-xs bg-purple-700 px-4 rounded-sm text-white">
-        From:{" "}
-        <span className="font-semibold sm:text-sm capitalize">
-          {authorName}
-        </span>
-      </h3>
+      {created_by && (
+        <h3 className="absolute -bottom-2 right-0 text-xs bg-purple-700 px-4 rounded-sm text-white">
+          From:{" "}
+          <span className="font-semibold sm:text-sm capitalize">
+            {created_by[0]}
+          </span>
+        </h3>
+      )}
 
       <div className="w-2/3  bg-[rgba(255,255,255,0.3)] shadow-md p-4 rounded-md relative ">
         <p className="break-word break-all sm:text-lg font-semibold mb-4">
@@ -47,7 +46,7 @@ const SingleNote = ({ note }) => {
           }}
           disabled={isDeletingTaskPending}
         >
-          {authorEmail === user.email && (
+          {created_by[1] === user.email && (
             <RiDeleteBin3Fill
               className={` ${
                 isDeletingTaskPending ? "text-red-300" : "text-red-700"
