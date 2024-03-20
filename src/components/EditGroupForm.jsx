@@ -110,7 +110,7 @@ const EditGroupForm = ({ group, id }) => {
               name="name"
               defaultValue={members.name}
               required
-              className="bg-slate-300  rounded-md shadow-md outline-0 p-2"
+              className="bg-slate-100  rounded-md shadow-md outline-0 p-2"
             />
           </div>
           <div>
@@ -129,7 +129,7 @@ const EditGroupForm = ({ group, id }) => {
                 <div className="flex flex-col gap-y-2 p-6 mt-3 mb-6 rounded-md shadow-md border-t border-slate-500  ">
                   <label
                     htmlFor={`member-${index}-name`}
-                    className="font-semibold"
+                    className="font-semibold text-white"
                   >
                     Name:
                   </label>
@@ -142,11 +142,11 @@ const EditGroupForm = ({ group, id }) => {
                     onChange={(e) => {
                       setMemberName(e.target.value);
                     }}
-                    className=" bg-slate-300 rounded-md shadow-md outline-0 px-2 py-1"
+                    className=" bg-slate-100 rounded-md shadow-md outline-0 px-2 py-1"
                   />
                   <label
                     htmlFor={`member-${index}-email`}
-                    className="font-semibold"
+                    className="font-semibold text-white"
                   >
                     Email:
                   </label>
@@ -159,7 +159,7 @@ const EditGroupForm = ({ group, id }) => {
                     onChange={(e) => {
                       e.target.value;
                     }}
-                    className=" bg-slate-300  rounded-md shadow-md outline-0 px-2 py-1"
+                    className=" bg-slate-100  rounded-md shadow-md outline-0 px-2 py-1"
                   />
                 </div>
                 <button type="button">

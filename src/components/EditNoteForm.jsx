@@ -50,7 +50,7 @@ const EditNoteForm = ({ note, groups }) => {
         >
           {/* select group */}
           <div className="flex flex-col mb-4 gap-y-2">
-            <label htmlFor="group_id" className="font-semibold">
+            <label htmlFor="group_id" className="font-semibold text-white">
               Note for:
             </label>
             <select
@@ -59,7 +59,7 @@ const EditNoteForm = ({ note, groups }) => {
               required
               defaultValue={note.group_id}
               onChange={handleOptionChange}
-              className="bg-slate-300 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
+              className="bg-slate-100 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
             >
               <option value={" "}>{"select group"}</option>
               {groups.map((group) => {
@@ -73,7 +73,7 @@ const EditNoteForm = ({ note, groups }) => {
           </div>
           {/* note text */}
           <div className="flex flex-col mb-4 gap-y-2">
-            <label htmlFor="task" className="font-semibold">
+            <label htmlFor="task" className="font-semibold text-white">
               Note:
             </label>
             <textarea
@@ -82,19 +82,19 @@ const EditNoteForm = ({ note, groups }) => {
               defaultValue={note.task}
               required
               minLength={3}
-              className="bg-slate-300 rounded-md outline-0 p-2"
+              className="bg-slate-100 rounded-md outline-0 p-2"
             />
           </div>
           {/* select member */}
           <div className="flex flex-col mb-4 gap-y-2">
-            <label htmlFor="group_member" className="font-semibold">
+            <label htmlFor="group_member" className="font-semibold text-white">
               Member:
             </label>
             <select
               name="group_member"
               id="group_member"
               defaultValue={note.group_member}
-              className="bg-slate-300 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
+              className="bg-slate-100 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
             >
               <option value="all">All</option>
 
@@ -109,7 +109,7 @@ const EditNoteForm = ({ note, groups }) => {
           </div>
           {/* priority */}
           <div className="flex items-center gap-x-3">
-            <label htmlFor="priority" className="font-semibold">
+            <label htmlFor="priority" className="font-semibold text-white">
               Priority
             </label>
             <input
@@ -123,7 +123,7 @@ const EditNoteForm = ({ note, groups }) => {
             disabled={isEditNotePending}
             className="mt-6 bg-green-600 rounded-md text-slate-100 py-1 px-4 shadow-md w-full "
           >
-            {!isEditNotePending ? "Add Note" : "Submitting"}
+            {!isEditNotePending ? "Confirm" : "Submitting"}
           </button>
         </form>
       </div>

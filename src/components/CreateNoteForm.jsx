@@ -51,8 +51,8 @@ const CreateNoteForm = ({ groups }) => {
       className="bg-purple-900 shadow-md rounded-md p-4 border-t"
     >
       {/* select group */}
-      <div className="flex flex-col mb-4 gap-y-2">
-        <label htmlFor="group_id" className="font-semibold">
+      <div className="flex flex-col mb-4 gap-y-2 ">
+        <label htmlFor="group_id" className="font-semibold text-white">
           Note for:
         </label>
         <select
@@ -61,7 +61,7 @@ const CreateNoteForm = ({ groups }) => {
           required
           defaultValue={state.groupId ? state.groupId : 0}
           onChange={handleOptionChange}
-          className="bg-slate-300 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
+          className="bg-slate-100 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
         >
           <option value={0} disabled>
             {"select group"}
@@ -77,25 +77,25 @@ const CreateNoteForm = ({ groups }) => {
       </div>
       {/* note text */}
       <div className="flex flex-col mb-4 gap-y-2">
-        <label htmlFor="task" className="font-semibold">
+        <label htmlFor="task" className="font-semibold text-white">
           Note:
         </label>
         <textarea
           name="task"
           id="task"
           required
-          className="bg-slate-300 rounded-md outline-0 p-2"
+          className="bg-slate-100 rounded-md outline-0 p-2"
         />
       </div>
       {/* select member */}
       <div className="flex flex-col mb-4 gap-y-2">
-        <label htmlFor="group_member" className="font-semibold">
+        <label htmlFor="group_member" className="font-semibold text-white">
           Member:
         </label>
         <select
           name="group_member"
           id="group_member"
-          className="bg-slate-300 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
+          className="bg-slate-100 rounded-md outline-0 p-2 w-1/2 sm:w-1/3 "
         >
           <option value="all">All</option>
 
@@ -110,7 +110,7 @@ const CreateNoteForm = ({ groups }) => {
       </div>
       {/* priority */}
       <div className="flex items-center gap-x-3">
-        <label htmlFor="priority" className="font-semibold">
+        <label htmlFor="priority" className="font-semibold text-white">
           Priority
         </label>
         <input type="checkbox" name="priority" />

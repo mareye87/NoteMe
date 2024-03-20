@@ -49,7 +49,7 @@ const Navbar = () => {
         </button>
 
         {/* menu links */}
-        <div className="hidden  sm:flex gap-x-4 ">
+        <div className="hidden  sm:flex gap-x-4 capitalize">
           {groups && (
             <Link
               to="create-note"
@@ -68,7 +68,7 @@ const Navbar = () => {
           </Link>
           <button
             onClick={signOut}
-            className="bg-purple-900 px-2 py-1 rounded-md text-sm text-slate-50 font-semibold"
+            className="bg-purple-900 px-2 py-1 rounded-md text-sm text-slate-50 font-semibold capitalize"
           >
             log out
           </button>

@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen py-24">
       <h1 className="text-xl text-slate-800 font-semibold text-center bg-yellow-400 py-2 rounded-md">
-        Your NoteMe Groups
+        Your <span className="font-bold mx-1 ">NoteMe</span> Groups
       </h1>
       <div className="mt-10 ">
         {groups ? (
