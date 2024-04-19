@@ -31,8 +31,8 @@ const SingleNote = ({ note }) => {
         </h3>
       )}
 
-      <div className="w-2/3  bg-[rgba(255,255,255,0.3)] shadow-md p-4 rounded-md relative ">
-        <p className="break-word break-all sm:text-lg font-semibold mb-4">
+      <div className="w-3/4  bg-[rgba(255,255,255,0.3)] shadow-md p-4 rounded-md relative max-h-32 overflow-y-scroll ">
+        <p className="break-all whitespace-pre-wrap truncate sm:text-lg font-semibold mb-4">
           {task}
         </p>
         {priority && (
@@ -40,23 +40,26 @@ const SingleNote = ({ note }) => {
         )}
       </div>
       <div className="flex flex-col gap-y-4 items-end justify-center py-2 sm:text-2xl">
-        <button
-          onClick={() => {
-            deleteNote(id);
-          }}
-          disabled={isDeletingTaskPending}
-        >
-          {created_by[1] === user.email && (
-            <RiDeleteBin3Fill
-              className={` ${
-                isDeletingTaskPending ? "text-red-300" : "text-red-700"
-              }`}
-            />
-          )}
-        </button>
-        <Link to={`/dash/edit-note/${id}`}>
-          <RiEdit2Fill className="text-blue-600" />
-        </Link>
+        {created_by[1] === user.email ? (
+          <>
+            <button
+              onClick={() => {
+                deleteNote(id);
+              }}
+              disabled={isDeletingTaskPending}
+            >
+              <RiDeleteBin3Fill
+                className={`${
+                  isDeletingTaskPending ? "text-red-300" : "text-red-700"
+                }`}
+              />
+            </button>
+            <Link to={`/dash/edit-note/${id}`}>
+              <RiEdit2Fill className="text-blue-600" />
+            </Link>
+          </>
+        ) : null}
+
         <p className="text-sm text-right">
           <span className="text-xs sm:text-base ml-2">{date}</span>
         </p>
